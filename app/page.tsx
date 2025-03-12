@@ -1,101 +1,162 @@
-import Image from "next/image";
+import { Timeline } from "@/components/timeline/Timeline"
+
+// Tijdlijn items voor de EU AI Act
+const timelineItems = [
+  {
+    id: "1",
+    title: "Publicatie EU AI Act",
+    date: "12 juli 2024",
+    description: "De EU AI Act is gepubliceerd in het Official Journal of the European Union.",
+    iconFallback: "📄",
+    iconColor: "bg-blue-600",
+    details: [
+      "Eerste uitgebreide AI-wetgeving ter wereld",
+      "Risicogebaseerde benadering voor AI-systemen",
+      "Doel: veilige en betrouwbare AI bevorderen",
+      "Bescherming van fundamentele rechten"
+    ]
+  },
+  {
+    id: "2",
+    title: "Inwerkingtreding",
+    date: "2 augustus 2024",
+    description: "De EU AI Act treedt in werking, maar de verplichtingen en handhavingsbepalingen zijn nog niet van kracht.",
+    iconFallback: "⚖️",
+    iconColor: "bg-blue-500",
+    details: [
+      "Officiële start van de EU AI Act",
+      "Verplichtingen nog niet van kracht (Art. 113)",
+      "Begin van voorbereidingsperiode voor bedrijven",
+      "Start van ontwikkeling van richtsnoeren"
+    ]
+  },
+  {
+    id: "3",
+    title: "AI-geletterdheid & Verboden AI-systemen",
+    date: "2 februari 2025",
+    description: "Verplichtingen voor AI-geletterdheid en verboden AI-systemen treden in werking.",
+    iconFallback: "🎓",
+    iconColor: "bg-green-600",
+    details: [
+      "Verplichtingen voor training en bewustwording",
+      "Verbod op AI-systemen met onaanvaardbare risico's",
+      "Verbod op sociale scoring door overheden",
+      "Verbod op biometrische categorisatie op basis van gevoelige kenmerken",
+      "Verbod op emotieherkenning op werkplekken en onderwijsinstellingen",
+      "Artikel 4 en 113 worden van kracht",
+      "Focus op kennis en vaardigheden voor AI-gebruik"
+    ]
+  },
+  {
+    id: "4",
+    title: "Publicatie AI-modellen",
+    date: "2 mei 2025",
+    description: "Het Europees AI-bureau moet praktijkcodes publiceren voor algemene AI-modellen.",
+    iconFallback: "📋",
+    iconColor: "bg-blue-500",
+    details: [
+      "Praktijkcodes voor algemene AI-modellen",
+      "Richtlijnen voor ontwikkelaars",
+      "Artikel 56(9) wordt van kracht",
+      "Standaarden voor transparantie en veiligheid"
+    ]
+  },
+  {
+    id: "5",
+    title: "Handhaving GPAI-modellen",
+    date: "2 augustus 2025",
+    description: "Verplichtingen voor algemene AI-modellen (GPAI) treden in werking en het hoofdstuk over sancties wordt van kracht.",
+    iconFallback: "🔍",
+    iconColor: "bg-blue-600",
+    details: [
+      "Verplichtingen voor GPAI-modellen",
+      "Hoofdstuk over sancties wordt van kracht",
+      "Artikel 56(9) en 101 worden geactiveerd",
+      "Start van handhaving voor grote AI-modellen"
+    ]
+  },
+  {
+    id: "6",
+    title: "Implementatie Hoog-Risico AI",
+    date: "2 februari 2026",
+    description: "De Europese Commissie moet een implementatiehandleiding aannemen voor hoog-risico AI-systemen.",
+    iconFallback: "⚠️",
+    iconColor: "bg-blue-700",
+    details: [
+      "Implementatiehandleiding voor hoog-risico AI",
+      "Richtlijnen voor post-market monitoring",
+      "Artikel 72 wordt van kracht",
+      "Classificatieregels voor hoog-risico AI-systemen"
+    ]
+  },
+  {
+    id: "7",
+    title: "Sancties en Handhaving",
+    date: "2 augustus 2026",
+    description: "Lidstaten moeten regels implementeren voor sancties en andere handhavingsmaatregelen.",
+    iconFallback: "🚫",
+    iconColor: "bg-blue-800",
+    details: [
+      "Implementatie van sancties door lidstaten",
+      "Handhavingsmaatregelen worden geactiveerd",
+      "Artikel 99 wordt van kracht",
+      "Overige bepalingen van de wet treden in werking"
+    ]
+  },
+  {
+    id: "8",
+    title: "Volledige Handhaving",
+    date: "2 augustus 2027",
+    description: "Volledige handhaving van de EU AI Act voor gereguleerde hoog-risico AI-systemen.",
+    iconFallback: "✅",
+    iconColor: "bg-blue-900",
+    details: [
+      "Volledige handhaving voor hoog-risico AI-systemen",
+      "Verplichtingen voor gereguleerde systemen",
+      "Markttoezicht volledig operationeel",
+      "Bedrijven moeten volledig compliant zijn"
+    ]
+  },
+  {
+    id: "9",
+    title: "Deadline Compliance",
+    date: "31 december 2030",
+    description: "Uiterste deadline voor compliance voor AI-systemen die vóór 2 augustus 2027 op de markt zijn gebracht.",
+    iconFallback: "🏁",
+    iconColor: "bg-blue-500",
+    details: [
+      "Uiterste deadline voor oudere AI-systemen",
+      "Alle systemen moeten compliant zijn",
+      "Artikel 111(1) wordt volledig gehandhaafd",
+      "Geen uitzonderingen meer voor bestaande systemen"
+    ]
+  }
+]
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    <main className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-6">
+      <div className="container mx-auto px-4 relative z-10">
+        <header className="text-center mb-6">
+          <h1 className="text-3xl font-bold mb-2 text-blue-800">
+            EU AI Act: Belangrijke Data voor Compliance
+          </h1>
+          
+          <p className="text-blue-700 max-w-3xl mx-auto">
+            De EU AI Act is formeel aangenomen en het aftellen naar de start van de handhaving is begonnen.
+            Hier zijn de belangrijke data die u moet kennen voor uw compliance roadmap.
+          </p>
+        </header>
+        
+        <Timeline items={timelineItems} className="mt-4" />
+        
+        <footer className="mt-6 text-center text-xs text-blue-600">
+          <p className="max-w-3xl mx-auto">
+            De EU AI Act is de eerste uitgebreide wetgeving ter wereld die specifiek gericht is op kunstmatige intelligentie.
+            Organisaties worden geadviseerd om tijdig te beginnen met het aanpassen van hun AI-systemen en -processen.
+          </p>
+        </footer>
+      </div>
+    </main>
+  )
 }
