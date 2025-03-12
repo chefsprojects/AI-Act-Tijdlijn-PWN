@@ -57,7 +57,7 @@ export function Timeline({ items, className }: TimelineProps) {
           <div className="flex justify-between mb-12 px-16">
             {years.map((year) => (
               <div key={year} className="flex flex-col items-center">
-                <div className="text-3xl font-bold text-sky-500">{year}</div>
+                <div className="text-3xl font-bold text-blue-700">{year}</div>
               </div>
             ))}
           </div>
@@ -108,12 +108,12 @@ export function Timeline({ items, className }: TimelineProps) {
                     title={`Klik voor meer details over ${item.title}`}
                   >
                     {/* Marker outer ring met animatie */}
-                    <div className="absolute inset-0 rounded-full border-[3px] border-sky-500 bg-white
+                    <div className="absolute inset-0 rounded-full border-[3px] border-blue-700 bg-white
                       after:absolute after:inset-[-2px] after:rounded-full after:border-2 after:border-green-200 after:animate-ping"></div>
                     {/* Marker inner dot met pulse effect */}
-                    <div className="absolute inset-2 rounded-full bg-gradient-to-r from-sky-400 to-sky-600 shadow-inner">
+                    <div className="absolute inset-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 shadow-inner">
                       <div className={cn(
-                        "absolute inset-0 rounded-full bg-gradient-to-r from-sky-300 to-sky-500 animate-pulse",
+                        "absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 animate-pulse",
                         activeItem === item.id ? "opacity-100" : "opacity-0"
                       )}></div>
                     </div>
@@ -156,8 +156,8 @@ export function Timeline({ items, className }: TimelineProps) {
                     "absolute w-64 bg-white rounded-lg shadow-lg border border-green-100 p-4 left-1/2 transform -translate-x-1/2 transition-all duration-300",
                     "hover:shadow-[0_10px_40px_-15px_rgba(22,163,74,0.3)]",
                     index % 2 === 0 
-                      ? "bottom-[380px] border-t-4 border-t-sky-500" 
-                      : "top-[480px] border-b-4 border-b-sky-500", // Aangepast voor meer ruimte
+                      ? "bottom-[380px] border-t-4 border-t-blue-700" 
+                      : "top-[480px] border-b-4 border-b-blue-700", // Aangepast voor meer ruimte
                     activeItem === item.id 
                       ? "scale-105 z-20 shadow-[0_15px_50px_-12px_rgba(22,163,74,0.4)]" 
                       : "hover:scale-[1.02]"
@@ -167,7 +167,7 @@ export function Timeline({ items, className }: TimelineProps) {
                     <div className="flex items-start gap-3 mb-3">
                       <Avatar className={cn(
                         "h-8 w-8 ring-2 ring-offset-2",
-                        item.iconColor || "bg-sky-500 ring-sky-100"
+                        item.iconColor || "bg-blue-700 ring-blue-100"
                       )}>
                         {item.icon ? (
                           <AvatarImage src={item.icon} alt={item.title} />
@@ -178,7 +178,7 @@ export function Timeline({ items, className }: TimelineProps) {
                         )}
                       </Avatar>
                       <div>
-                        <h3 className="text-sm font-bold text-sky-600 leading-tight">{item.title}</h3>
+                        <h3 className="text-sm font-bold text-blue-700 leading-tight">{item.title}</h3>
                       </div>
                     </div>
                     
@@ -213,7 +213,7 @@ export function Timeline({ items, className }: TimelineProps) {
           
           {/* PWN Logo naast de onderste kaart */}
           <div className="absolute right-0 top-[780px] opacity-100 w-28 h-auto z-30 -mr-4">
-            <div className="bg-white p-2 rounded-lg shadow-md border border-sky-100">
+            <div className="bg-white p-2 rounded-lg shadow-md border border-blue-100">
               <Image
                 src="/logo pwn.png"
                 alt="PWN Logo"
