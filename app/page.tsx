@@ -136,7 +136,7 @@ const timelineItems = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-6">
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full px-2 sm:px-4 relative z-10">
         <header className="text-center mb-6">
           <h1 className="text-3xl font-bold mb-2 text-blue-800">
             EU AI Act: Belangrijke Data voor Compliance
@@ -149,13 +149,6 @@ export default function Home() {
         </header>
         
         <Timeline items={timelineItems} className="mt-4" />
-        
-        <footer className="mt-6 text-center text-xs text-blue-600">
-          <p className="max-w-3xl mx-auto">
-            De EU AI Act is de eerste uitgebreide wetgeving ter wereld die specifiek gericht is op kunstmatige intelligentie.
-            Organisaties worden geadviseerd om tijdig te beginnen met het aanpassen van hun AI-systemen en -processen.
-          </p>
-        </footer>
       </div>
     </main>
   )
